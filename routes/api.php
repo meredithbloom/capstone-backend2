@@ -18,15 +18,6 @@ use App\Http\Controllers\AuthController;
 
 
 
-//INDEX
-//Route::get('/reviews', [ReviewController::class, 'index']);
-
-//SHOW
-
-// Route::resource('reviews', ReviewController::class);
-
-
-
 //public routes
 
 //create account
