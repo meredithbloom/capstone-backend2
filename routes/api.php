@@ -36,12 +36,16 @@ Route::get('/reviews/search/{game}', [ReviewController::class, 'search']);
 
 //protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
+    //get all user info
+    Route::get('/users', [AuthController::class, 'index']);
+    //get specific user info
+    Route::get('/users/{id}', [AuthController::class, 'show']);
     //create - only available to auth users
    Route::post('/reviews', [ReviewController::class, 'store']);
    //update
    Route::put('/reviews/{id}', [ReviewController::class, 'update']);
    //delete
-   Route::delete('/reviews/{id}', [ReviewController::class, 'delete']);
+   Route::delete('/reviews/{id}', [ReviewController::class, 'destroy']);
    //logout
    Route::post('/logout', [AuthController::class, 'logout']);
 });

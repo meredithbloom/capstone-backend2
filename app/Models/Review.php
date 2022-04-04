@@ -16,7 +16,11 @@ class Review extends Model
         'slug',
         'body',
         'game',
-        'rating'
+        'rating',
+        'game_id',
+        'author_id',
+        'game_cover',
+        'author_username'
     ];
 
 
