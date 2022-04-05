@@ -30,25 +30,25 @@ Route::get('/reviews', [ReviewController::class, 'index']);
 Route::get('/reviews/{id}', [ReviewController::class, 'show']);
 //search for review by game name
 Route::get('/reviews/search/{game}', [ReviewController::class, 'search']);
-
+//get all users
+Route::get('/users', [AuthController::class, 'index']);
 
 
 //protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    //get all user info
-    Route::get('/users', [AuthController::class, 'index']);
+   
     //get specific user info
     Route::get('/users/{id}', [AuthController::class, 'show']);
     //create - only available to auth users
-   Route::post('/reviews', [ReviewController::class, 'store']);
+    Route::post('/reviews', [ReviewController::class, 'store']);
    //update
-   Route::put('/reviews/{id}', [ReviewController::class, 'update']);
+    Route::put('/reviews/{id}', [ReviewController::class, 'update']);
    //delete
-   Route::delete('/reviews/{id}', [ReviewController::class, 'destroy']);
+    Route::delete('/reviews/{id}', [ReviewController::class, 'destroy']);
    //delete account
-   Route::delete('/users/{id}', [AuthController::class, 'destroy']);
+    Route::delete('/users/{id}', [AuthController::class, 'destroy']);
    //logout
-   Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 
