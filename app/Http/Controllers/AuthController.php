@@ -13,7 +13,7 @@ class AuthController extends Controller
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed',
+            'password' => 'required|string',
             'username' => 'required|string|unique:users,username'
         ]);
 
@@ -76,5 +76,45 @@ class AuthController extends Controller
             'message' => 'Logged out'
         ];
     }
+
+
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return User::all();
+    }
+
+
+
+
+
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        return User::find($id);
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 }

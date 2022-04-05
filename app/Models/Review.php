@@ -11,11 +11,20 @@ class Review extends Model
 
    
 
-
     protected $fillable = [
         'title',
         'slug',
         'body',
-        'game'
+        'game',
+        'rating',
+        'game_id',
+        'author_id',
+        'game_cover',
+        'author_username'
     ];
+
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

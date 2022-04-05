@@ -27,7 +27,9 @@ class ReviewController extends Controller
         $request->validate([
             'title' => 'required',
             'slug' => 'required',
-            'game' => 'required'
+            'game' => 'required',
+            'author_id' => 'required',
+            'game_id' => 'required'
         ]);
 
         return Review::create($request->all());
