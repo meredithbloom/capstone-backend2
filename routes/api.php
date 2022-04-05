@@ -24,7 +24,6 @@ use App\Http\Controllers\AuthController;
 Route::post('/register', [AuthController::class, 'register']);
 //login
 Route::post('/login', [AuthController::class, 'login']);
-
 //review index
 Route::get('/reviews', [ReviewController::class, 'index']);
 //show review
@@ -46,6 +45,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
    Route::put('/reviews/{id}', [ReviewController::class, 'update']);
    //delete
    Route::delete('/reviews/{id}', [ReviewController::class, 'destroy']);
+   //delete account
+   Route::delete('/users/{id}', [AuthController::class, 'destroy']);
    //logout
    Route::post('/logout', [AuthController::class, 'logout']);
 });

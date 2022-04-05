@@ -66,9 +66,6 @@ class AuthController extends Controller
     }
 
 
-
-
-
     public function logout(Request $request) {
         auth()->user()->tokens()->delete();
         
@@ -76,6 +73,21 @@ class AuthController extends Controller
             'message' => 'Logged out'
         ];
     }
+
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id) {
+        if(auth()->user()->id == $id) {
+            return User::destroy($id);
+        }
+    }
+
 
 
 

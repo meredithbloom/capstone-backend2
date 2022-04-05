@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ReviewController extends Controller
 {
