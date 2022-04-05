@@ -12,9 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        'http://localhost:8000/api/register',
-        'http://localhost:8000/api/login',
-        'reviews',
+        'https://play3d-backend.herokuapp.com/api/register',
+        'https://play3d-backend.herokuapp.com/api/login',
+        'https://play3d-backend.herokuapp.com/api/reviews',
         'reviews/*',
         'users/*'
     ];
